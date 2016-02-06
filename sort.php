@@ -127,25 +127,7 @@ function getSorted($content)
 $content = file_get_contents('people.txt');
 $data = getSorted($content);
 
-$peopleIndex = $data[0];
-$messages = $data[1];
+//save to file
+file_put_contents("data.json",json_encode($data));
 
-/*
- * Messages sorted and ordered
- */
-
- //count all messages
-$sum = 0;
-
-foreach($messages as $message)
-{
-	foreach($messages as $block)
-	{
-		$sum += count($block);
-	}
-	
-}
-echo $sum;
- 
- 
 ?>
