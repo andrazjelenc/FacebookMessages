@@ -10,7 +10,7 @@ $PDO = new PDO('mysql:dbname='.$database['dbName'].';host='.$database['host'], $
 
 function cleanNames($name)
 {
-	$name = str_replace('100000292515765','Andraž Jelenc',$name);
+	$name = str_replace('XXXXXXXXXXXXXXXXXXX','XXXXXXXXXXXXXX',$name);
 	return str_replace('&#064;facebook.com','',$name);
 }
 function convertDate($data)
