@@ -7,7 +7,7 @@ function isOlder($date1, $date2)
 	//compare only years, months and days
 	
 	//change into your language
-	$months = array('januar','februar','marec','april','junij','julij','avgust','september','oktober','november','december');
+	$months = array('januar','februar','marec','april','maj','junij','julij','avgust','september','oktober','november','december');
 	
 	/* 
 	 * COMPARE
