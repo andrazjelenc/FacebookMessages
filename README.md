@@ -2,8 +2,8 @@
 Order downloaded facebook messages
 
 
-First run clean.php on orginal mesages.htm from Facebook to remove some html tags.
+First download your own facebook data arhive (Settings->General->Download a copy of your Facebook data)
 
-Then using: "php -d memory_limit=1024M sort.php" create data.json file with sorted messages
+Create utf8_mb4 database on local MySQL server and import structure from _db. Then put file2db.php in the html subdir and using terminal run: "php file2db.php".
 
-Analyze.php is example of usage created data.json
+The script will collect your (not group) chats and save it in the db. For friends with more names you will be asked to choose which one you want to use. 
