@@ -1,14 +1,14 @@
 <?php
 
-//my id and name used for  determing whether who's who
+//my id and name used for  determing who's who
 $myId = '100000292515765';
 $myName = 'Andraž Jelenc';
 
 $allowWrite = false;	//filtering group chats away
 
 $user = '';
-$send_received_flag = 0;	//am I the sender ? 0 - yes
-							//					1 - no
+$send_received_flag = 0;	//am I the sender ? 	0 - yes
+				//			1 - no
 $datetime = '';		//datetime of message in MySQL format
 							
 $allUsers = array();	//dictionary connecting ids and names
