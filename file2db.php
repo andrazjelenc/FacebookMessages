@@ -65,6 +65,11 @@ function procced($value, $type)
 				{
 					$user = $users[0];
 				}
+				//add user id to $allUsers array
+				if(!array_key_exists($user, $allUsers))
+				{
+					$allUsers[$user] = array();
+				}
 			}
 			else	//group chat
 			{
@@ -74,6 +79,7 @@ function procced($value, $type)
 			
 		case 1: //message sender
 			$value = str_replace('&#064;facebook.com', '', $value);
+			
 			if($value == $myId || $value == $myName)
 			{
 				//I am the sender
@@ -84,29 +90,11 @@ function procced($value, $type)
 				//we receive
 				$send_received_flag = 1;
 
-				//value = is sender name here
-				
 				//connect name and id in $allUsers dictionary
-				if(array_key_exists($user, $allUsers))	//this ID is already in dict
+				if($value != $user && !in_array($value, $allUsers[$user]))
 				{
-					if($user != $value && !in_array($value, $allUsers[$user]))
-					{
-						$allUsers[$user][] = $value;
-					}
-				}
-				else	//new ID
-				{
-					if($user == $value)
-					{
-						$allUsers[$user] = array();
-					}
-					else
-					{
-						$allUsers[$user] = array("0" =>$value);
-					}
-					
-				}
-				
+					$allUsers[$user][] = $value;
+				}				
 			}
 			break;
 			
