@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 26. feb 2017 ob 17.38
+-- Čas nastanka: 05. mar 2017 ob 12.01
 -- Različica strežnika: 5.7.9
 -- Različica PHP: 5.6.15
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Zbirka podatkov: `facebook2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `daily_count`
+--
+
+DROP TABLE IF EXISTS `daily_count`;
+CREATE TABLE IF NOT EXISTS `daily_count` (
+  `message_id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` bigint(20) NOT NULL,
+  `date` date NOT NULL,
+  `cnt` int(11) NOT NULL,
+  PRIMARY KEY (`message_id`),
+  KEY `person_id` (`person_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12309 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -48,6 +64,7 @@ DROP TABLE IF EXISTS `people`;
 CREATE TABLE IF NOT EXISTS `people` (
   `person_id` bigint(20) NOT NULL,
   `name` text NOT NULL,
+  `active` varchar(1) DEFAULT NULL,
   PRIMARY KEY (`person_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
